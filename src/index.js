@@ -1,19 +1,23 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
+//Nested Components
 
-let h1 = React.createElement('h1',null, 'Hello world..!');
-
-class HelloWorld extends React.Component{
-
-  render(){
-
-    return React.createElement('div',null,h1,h1);
-  }
-
+function Greeting(){
+  return(
+    <div>
+      <Person/>
+      <Message/>
+    </div>
+  )
 }
 
+const Person = () => <h> Bilawal Khan  </h>
+const Message  = () => {
+  
+    return <p>this is my message</p>
+};
 ReactDom.render(
-  React.createElement(HelloWorld,null)
+  <Greeting/>
   ,document.getElementById('root')
 )
